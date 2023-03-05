@@ -1,11 +1,12 @@
 const std = @import("std");
 
-fn foo(x: i32) i32 {
-  var y: i32 = 100;
-  return x + y;
-}
+const Vec2 = struct{
+  x: f64 = 0.0,
+  y: f64,
+  z: f64,
+};
 
 pub fn main() void {
-  const z: i32 = foo(100);
-  std.debug.print("Z: {}", .{z});
+  const v = Vec2{.y = 1.0, .z = 2.0};
+  std.debug.print("v: {}", .{v});
 }
