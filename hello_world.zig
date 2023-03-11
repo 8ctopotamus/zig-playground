@@ -4,11 +4,12 @@ const std = @import("std");
 
 pub fn main() void {
   var array: [3]u32 = [3]u32{47,47, 47};
+  var slice: []u32 = array[0..2];
 
   // also valid:
-  // var array = [_]u32{47, 47, 47};
+  // var slice = array[0..2];
 
-  // var invalid = array[4]; // error: index 4 outside array of size 3
-  std.debug.print("array[0]: {}\n", .{array[0]});
-  std.debug.print("length: {}\n", .{array.len});
+  // var invalid = slice[3]; // panic: index out of bounds
+  std.debug.print("slice[0]: {}\n", .{slice[0]});
+  std.debug.print("length: {}\n", .{slice.len});
 }
